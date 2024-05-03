@@ -1,0 +1,48 @@
+# Running on compute-0-4.local
+# Started at Sat Feb 11 19:17:16 IST 2023
+# nnet3-train --use-gpu=yes --read-cache=exp/displace_dev_sad_tdnn_stats/cache.29 --write-cache=exp/displace_dev_sad_tdnn_stats/cache.30 --print-interval=10 --momentum=0.5 --max-param-change=0.2 --backstitch-training-scale=0.0 --l2-regularize-factor=0.25 --backstitch-training-interval=1 --srand=29 --optimization.min-deriv-time=-34 --optimization.max-deriv-time-relative=56 "nnet3-copy --learning-rate=0.0007688611426410646 --scale=1.0 exp/displace_dev_sad_tdnn_stats/29.raw - |" "ark,bg:nnet3-copy-egs               ark:exp/displace_dev_sad_tdnn_stats/egs/egs.12.ark ark:- |             nnet3-shuffle-egs --buffer-size=5000             --srand=29 ark:- ark:- |              nnet3-merge-egs --minibatch-size=128,64 ark:- ark:- |" exp/displace_dev_sad_tdnn_stats/30.1.raw 
+nnet3-train --use-gpu=yes --read-cache=exp/displace_dev_sad_tdnn_stats/cache.29 --write-cache=exp/displace_dev_sad_tdnn_stats/cache.30 --print-interval=10 --momentum=0.5 --max-param-change=0.2 --backstitch-training-scale=0.0 --l2-regularize-factor=0.25 --backstitch-training-interval=1 --srand=29 --optimization.min-deriv-time=-34 --optimization.max-deriv-time-relative=56 'nnet3-copy --learning-rate=0.0007688611426410646 --scale=1.0 exp/displace_dev_sad_tdnn_stats/29.raw - |' 'ark,bg:nnet3-copy-egs               ark:exp/displace_dev_sad_tdnn_stats/egs/egs.12.ark ark:- |             nnet3-shuffle-egs --buffer-size=5000             --srand=29 ark:- ark:- |              nnet3-merge-egs --minibatch-size=128,64 ark:- ark:- |' exp/displace_dev_sad_tdnn_stats/30.1.raw 
+WARNING (nnet3-train[5.5.1060~1-ae8cb]:SelectGpuId():cu-device.cc:243) Not in compute-exclusive mode.  Suggestion: use 'nvidia-smi -c 3' to set compute exclusive mode
+LOG (nnet3-train[5.5.1060~1-ae8cb]:SelectGpuIdAuto():cu-device.cc:438) Selecting from 2 GPUs
+LOG (nnet3-train[5.5.1060~1-ae8cb]:SelectGpuIdAuto():cu-device.cc:453) cudaSetDevice(0): NVIDIA GeForce GTX 1080 Ti	free:11041M, used:137M, total:11178M, free/total:0.987733
+LOG (nnet3-train[5.5.1060~1-ae8cb]:SelectGpuIdAuto():cu-device.cc:453) cudaSetDevice(1): NVIDIA GeForce GTX 1080 Ti	free:11041M, used:137M, total:11178M, free/total:0.987733
+LOG (nnet3-train[5.5.1060~1-ae8cb]:SelectGpuIdAuto():cu-device.cc:501) Device: 0, mem_ratio: 0.987733
+LOG (nnet3-train[5.5.1060~1-ae8cb]:SelectGpuId():cu-device.cc:382) Trying to select device: 0
+LOG (nnet3-train[5.5.1060~1-ae8cb]:SelectGpuIdAuto():cu-device.cc:511) Success selecting device 0 free mem ratio: 0.987733
+LOG (nnet3-train[5.5.1060~1-ae8cb]:FinalizeActiveGpu():cu-device.cc:338) The active GPU is [0]: NVIDIA GeForce GTX 1080 Ti	free:10827M, used:351M, total:11178M, free/total:0.968589 version 6.1
+nnet3-copy --learning-rate=0.0007688611426410646 --scale=1.0 exp/displace_dev_sad_tdnn_stats/29.raw - 
+LOG (nnet3-copy[5.5.1060~1-ae8cb]:main():nnet3-copy.cc:123) Copied raw neural net from exp/displace_dev_sad_tdnn_stats/29.raw to -
+LOG (nnet3-train[5.5.1060~1-ae8cb]:NnetTrainer():nnet-training.cc:48) Read computation cache from exp/displace_dev_sad_tdnn_stats/cache.29
+nnet3-merge-egs --minibatch-size=128,64 ark:- ark:- 
+nnet3-shuffle-egs --buffer-size=5000 --srand=29 ark:- ark:- 
+nnet3-copy-egs ark:exp/displace_dev_sad_tdnn_stats/egs/egs.12.ark ark:- 
+WARNING (nnet3-train[5.5.1060~1-ae8cb]:ReorthogonalizeRt1():natural-gradient-online.cc:241) Cholesky out of expected range, reorthogonalizing with Gram-Schmidt
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintStatsForThisPhase():nnet-training.cc:278) Average objective function for 'output' for minibatches 0-9 is -0.129567 over 8959.98 frames.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintStatsForThisPhase():nnet-training.cc:278) Average objective function for 'output' for minibatches 10-19 is -0.132673 over 8959.96 frames.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintStatsForThisPhase():nnet-training.cc:278) Average objective function for 'output' for minibatches 20-29 is -0.144481 over 8959.97 frames.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintStatsForThisPhase():nnet-training.cc:278) Average objective function for 'output' for minibatches 30-39 is -0.141459 over 8960.05 frames.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.926568 with max-change=0.2.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintStatsForThisPhase():nnet-training.cc:278) Average objective function for 'output' for minibatches 40-49 is -0.150746 over 8959.98 frames.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.879155 with max-change=0.2.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintStatsForThisPhase():nnet-training.cc:278) Average objective function for 'output' for minibatches 50-59 is -0.163704 over 8959.99 frames.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintStatsForThisPhase():nnet-training.cc:278) Average objective function for 'output' for minibatches 60-69 is -0.152096 over 8959.97 frames.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintStatsForThisPhase():nnet-training.cc:278) Average objective function for 'output' for minibatches 70-79 is -0.130437 over 8960.01 frames.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.991946 with max-change=0.2.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintStatsForThisPhase():nnet-training.cc:278) Average objective function for 'output' for minibatches 80-89 is -0.156595 over 8960.03 frames.
+LOG (nnet3-copy-egs[5.5.1060~1-ae8cb]:main():nnet3-copy-egs.cc:431) Read 17626 neural-network training examples, wrote 17626, 0 examples had errors.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintStatsForThisPhase():nnet-training.cc:278) Average objective function for 'output' for minibatches 90-99 is -0.149051 over 8959.97 frames.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintStatsForThisPhase():nnet-training.cc:278) Average objective function for 'output' for minibatches 100-109 is -0.133381 over 8960.02 frames.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintStatsForThisPhase():nnet-training.cc:278) Average objective function for 'output' for minibatches 110-119 is -0.136185 over 8959.99 frames.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintStatsForThisPhase():nnet-training.cc:278) Average objective function for 'output' for minibatches 120-129 is -0.113335 over 8960.02 frames.
+LOG (nnet3-shuffle-egs[5.5.1060~1-ae8cb]:main():nnet3-shuffle-egs.cc:105) Shuffled order of 17626 neural-network training examples using a buffer (partial randomization)
+LOG (nnet3-merge-egs[5.5.1060~1-ae8cb]:PrintSpecificStats():nnet-example-utils.cc:1162) Merged specific eg types as follows [format: <eg-size1>={<mb-size1>-><num-minibatches1>,<mbsize2>-><num-minibatches2>.../d=<num-discarded>},<egs-size2>={...},... (note,egs-size == number of input frames including context).
+LOG (nnet3-merge-egs[5.5.1060~1-ae8cb]:PrintSpecificStats():nnet-example-utils.cc:1192) 112={,d=4},170={,d=2},191={64->1,128->137,d=20}
+LOG (nnet3-merge-egs[5.5.1060~1-ae8cb]:PrintAggregateStats():nnet-example-utils.cc:1158) Processed 17626 egs of avg. size 191 into 138 minibatches, discarding 0.1475% of egs.  Avg minibatch size was 127.5, #distinct types of egs/minibatches was 3/2
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintTotalStats():nnet-training.cc:317) Overall average objective function for 'output' is -0.139867 over 123200 frames.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintTotalStats():nnet-training.cc:324) [this line is to be parsed by a script:] log-prob-per-frame=-0.139867
+LOG (nnet3-train[5.5.1060~1-ae8cb]:Print():nnet-utils.cc:2320) The global max-change was enforced 2.17391 % of the time.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:main():nnet3-train.cc:91) Wrote model to exp/displace_dev_sad_tdnn_stats/30.1.raw
+LOG (nnet3-train[5.5.1060~1-ae8cb]:~NnetTrainer():nnet-training.cc:334) Wrote computation cache to exp/displace_dev_sad_tdnn_stats/cache.30
+LOG (nnet3-train[5.5.1060~1-ae8cb]:~CachingOptimizingCompiler():nnet-optimize.cc:710) 0.00833 seconds taken in nnet3 compilation total (breakdown: 0 compilation, 0 optimization, 0 shortcut expansion, 0 checking, 0 computing indexes, 0.00833 misc.) + 0.0654 I/O.
+# Accounting: time=7 threads=1
+# Finished at Sat Feb 11 19:17:23 IST 2023 with status 0

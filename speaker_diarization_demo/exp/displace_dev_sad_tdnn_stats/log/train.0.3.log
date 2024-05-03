@@ -1,0 +1,307 @@
+# Running on compute-0-0.local
+# Started at Sat Feb 11 19:01:17 IST 2023
+# nnet3-train --use-gpu=yes --print-interval=10 --momentum=0.5 --max-param-change=0.1414213562373095 --backstitch-training-scale=0.0 --l2-regularize-factor=0.25 --backstitch-training-interval=1 --srand=0 --optimization.min-deriv-time=-34 --optimization.max-deriv-time-relative=56 "nnet3-copy --learning-rate=0.0012 --scale=0.99 exp/displace_dev_sad_tdnn_stats/0.raw - |" "ark,bg:nnet3-copy-egs               ark:exp/displace_dev_sad_tdnn_stats/egs/egs.3.ark ark:- |             nnet3-shuffle-egs --buffer-size=5000             --srand=0 ark:- ark:- |              nnet3-merge-egs --minibatch-size=64,32 ark:- ark:- |" exp/displace_dev_sad_tdnn_stats/1.3.raw 
+nnet3-train --use-gpu=yes --print-interval=10 --momentum=0.5 --max-param-change=0.1414213562373095 --backstitch-training-scale=0.0 --l2-regularize-factor=0.25 --backstitch-training-interval=1 --srand=0 --optimization.min-deriv-time=-34 --optimization.max-deriv-time-relative=56 'nnet3-copy --learning-rate=0.0012 --scale=0.99 exp/displace_dev_sad_tdnn_stats/0.raw - |' 'ark,bg:nnet3-copy-egs               ark:exp/displace_dev_sad_tdnn_stats/egs/egs.3.ark ark:- |             nnet3-shuffle-egs --buffer-size=5000             --srand=0 ark:- ark:- |              nnet3-merge-egs --minibatch-size=64,32 ark:- ark:- |' exp/displace_dev_sad_tdnn_stats/1.3.raw 
+WARNING (nnet3-train[5.5.1060~1-ae8cb]:SelectGpuId():cu-device.cc:243) Not in compute-exclusive mode.  Suggestion: use 'nvidia-smi -c 3' to set compute exclusive mode
+LOG (nnet3-train[5.5.1060~1-ae8cb]:SelectGpuIdAuto():cu-device.cc:438) Selecting from 2 GPUs
+LOG (nnet3-train[5.5.1060~1-ae8cb]:SelectGpuIdAuto():cu-device.cc:453) cudaSetDevice(0): Quadro P5000	free:16173M, used:105M, total:16278M, free/total:0.993542
+LOG (nnet3-train[5.5.1060~1-ae8cb]:SelectGpuIdAuto():cu-device.cc:453) cudaSetDevice(1): Quadro P5000	free:16173M, used:105M, total:16278M, free/total:0.993542
+LOG (nnet3-train[5.5.1060~1-ae8cb]:SelectGpuIdAuto():cu-device.cc:501) Device: 0, mem_ratio: 0.993542
+LOG (nnet3-train[5.5.1060~1-ae8cb]:SelectGpuId():cu-device.cc:382) Trying to select device: 0
+LOG (nnet3-train[5.5.1060~1-ae8cb]:SelectGpuIdAuto():cu-device.cc:511) Success selecting device 0 free mem ratio: 0.993542
+LOG (nnet3-train[5.5.1060~1-ae8cb]:FinalizeActiveGpu():cu-device.cc:338) The active GPU is [0]: Quadro P5000	free:15959M, used:319M, total:16278M, free/total:0.980396 version 6.1
+nnet3-copy --learning-rate=0.0012 --scale=0.99 exp/displace_dev_sad_tdnn_stats/0.raw - 
+LOG (nnet3-copy[5.5.1060~1-ae8cb]:main():nnet3-copy.cc:123) Copied raw neural net from exp/displace_dev_sad_tdnn_stats/0.raw to -
+nnet3-merge-egs --minibatch-size=64,32 ark:- ark:- 
+nnet3-copy-egs ark:exp/displace_dev_sad_tdnn_stats/egs/egs.3.ark ark:- 
+nnet3-shuffle-egs --buffer-size=5000 --srand=0 ark:- ark:- 
+WARNING (nnet3-train[5.5.1060~1-ae8cb]:ReorthogonalizeRt1():natural-gradient-online.cc:241) Cholesky out of expected range, reorthogonalizing with Gram-Schmidt
+WARNING (nnet3-train[5.5.1060~1-ae8cb]:ReorthogonalizeRt1():natural-gradient-online.cc:241) Cholesky out of expected range, reorthogonalizing with Gram-Schmidt
+WARNING (nnet3-train[5.5.1060~1-ae8cb]:ReorthogonalizeRt1():natural-gradient-online.cc:241) Cholesky out of expected range, reorthogonalizing with Gram-Schmidt
+WARNING (nnet3-train[5.5.1060~1-ae8cb]:ReorthogonalizeRt1():natural-gradient-online.cc:241) Cholesky out of expected range, reorthogonalizing with Gram-Schmidt
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.48723 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.806153 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.931769 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.675278 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.314475 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.143287 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.24506 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintStatsForThisPhase():nnet-training.cc:278) Average objective function for 'output' for minibatches 0-9 is -0.401955 over 4480.04 frames.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.402861 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.173164 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.219374 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.462553 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.579093 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.575576 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.69249 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.706764 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.508916 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.246142 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintStatsForThisPhase():nnet-training.cc:278) Average objective function for 'output' for minibatches 10-19 is -0.241258 over 4480.01 frames.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.261307 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.3898 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.400513 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.496793 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.241177 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Per-component max-change active on 1 / 6 Updatable Components. (Smallest factor=0.935681 on tdnn2.affine with max-change=0.75). Global max-change factor was 0.125007 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.270579 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.338558 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.225267 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.317863 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintStatsForThisPhase():nnet-training.cc:278) Average objective function for 'output' for minibatches 20-29 is -0.182117 over 4480.04 frames.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.374676 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.261476 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.230374 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.314243 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.361607 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.409949 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.266909 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.401155 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.366502 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.446437 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintStatsForThisPhase():nnet-training.cc:278) Average objective function for 'output' for minibatches 30-39 is -0.154851 over 4479.97 frames.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.598404 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.455385 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.236034 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.303904 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.465494 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.500974 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.55559 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.23073 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.339298 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.252348 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintStatsForThisPhase():nnet-training.cc:278) Average objective function for 'output' for minibatches 40-49 is -0.163731 over 4480 frames.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.344974 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.501569 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.392345 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.410328 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.538131 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.546689 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.530118 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.529446 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.284046 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.315561 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintStatsForThisPhase():nnet-training.cc:278) Average objective function for 'output' for minibatches 50-59 is -0.178014 over 4479.98 frames.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.438077 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.592524 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.500441 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.419554 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.190147 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.326344 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.371977 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.502036 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.347149 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.339363 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintStatsForThisPhase():nnet-training.cc:278) Average objective function for 'output' for minibatches 60-69 is -0.210012 over 4480.01 frames.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.358674 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.2784 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.394363 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.498081 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.698878 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.827593 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.759686 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.416268 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintStatsForThisPhase():nnet-training.cc:278) Average objective function for 'output' for minibatches 70-79 is -0.183507 over 4479.99 frames.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.709985 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.552263 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.662434 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.463518 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.64869 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.726552 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.68455 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.592585 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.502388 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.374805 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintStatsForThisPhase():nnet-training.cc:278) Average objective function for 'output' for minibatches 80-89 is -0.16814 over 4480 frames.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.452742 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.436775 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.348438 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.413432 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.570891 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.647798 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.369863 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.272546 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.348319 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.493383 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintStatsForThisPhase():nnet-training.cc:278) Average objective function for 'output' for minibatches 90-99 is -0.19456 over 4479.99 frames.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.478431 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.623906 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.540133 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.70195 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.635737 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.717033 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.819117 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.695474 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.803634 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintStatsForThisPhase():nnet-training.cc:278) Average objective function for 'output' for minibatches 100-109 is -0.184863 over 4480 frames.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.712308 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.263671 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.390617 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.518171 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.573991 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.767987 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.674941 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.810215 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.322274 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.458267 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintStatsForThisPhase():nnet-training.cc:278) Average objective function for 'output' for minibatches 110-119 is -0.165619 over 4480.01 frames.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.291939 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.489408 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.761282 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.791964 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.553128 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.498573 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.506742 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.58657 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.4231 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.563482 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintStatsForThisPhase():nnet-training.cc:278) Average objective function for 'output' for minibatches 120-129 is -0.201675 over 4479.98 frames.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.580905 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.651392 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.803829 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.492072 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.333069 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.36892 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.688029 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.432097 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.518734 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.495404 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintStatsForThisPhase():nnet-training.cc:278) Average objective function for 'output' for minibatches 130-139 is -0.188081 over 4480.01 frames.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.47941 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.752616 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.398702 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.537577 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.60768 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.770443 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.998849 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintStatsForThisPhase():nnet-training.cc:278) Average objective function for 'output' for minibatches 140-149 is -0.167066 over 4479.99 frames.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.70975 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.756282 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.728932 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.65263 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.576416 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.419354 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.711318 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.714975 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.667396 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.767995 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintStatsForThisPhase():nnet-training.cc:278) Average objective function for 'output' for minibatches 150-159 is -0.197951 over 4480.02 frames.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.699115 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.528229 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.789061 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.875433 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.715865 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.603933 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.460828 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintStatsForThisPhase():nnet-training.cc:278) Average objective function for 'output' for minibatches 160-169 is -0.192366 over 4479.97 frames.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.667696 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.574883 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.861265 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.906205 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.962151 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.367846 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.607596 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.848553 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.766703 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.908899 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintStatsForThisPhase():nnet-training.cc:278) Average objective function for 'output' for minibatches 170-179 is -0.186007 over 4479.99 frames.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.933578 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.843342 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.89157 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.467651 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.500724 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.73422 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.694682 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.58229 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintStatsForThisPhase():nnet-training.cc:278) Average objective function for 'output' for minibatches 180-189 is -0.150735 over 4479.99 frames.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.762815 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.449158 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.732066 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.9758 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.919625 with max-change=0.141421.
+LOG (nnet3-copy-egs[5.5.1060~1-ae8cb]:main():nnet3-copy-egs.cc:431) Read 17562 neural-network training examples, wrote 17562, 0 examples had errors.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.319043 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.613191 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.622734 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.845058 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintStatsForThisPhase():nnet-training.cc:278) Average objective function for 'output' for minibatches 190-199 is -0.174554 over 4480.04 frames.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.99995 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.838077 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.999898 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.528474 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.730868 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.976633 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintStatsForThisPhase():nnet-training.cc:278) Average objective function for 'output' for minibatches 200-209 is -0.170713 over 4480.01 frames.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.607042 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.795971 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.521239 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.913601 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.763955 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.627816 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.963348 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.821098 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.714699 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintStatsForThisPhase():nnet-training.cc:278) Average objective function for 'output' for minibatches 210-219 is -0.202483 over 4479.98 frames.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.791375 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.913865 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.872773 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.965429 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.56719 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.62786 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.840689 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.507832 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.978362 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintStatsForThisPhase():nnet-training.cc:278) Average objective function for 'output' for minibatches 220-229 is -0.195101 over 4480.03 frames.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.829131 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.303309 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.342864 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.637237 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.666878 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.701831 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.754667 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.479624 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.696911 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintStatsForThisPhase():nnet-training.cc:278) Average objective function for 'output' for minibatches 230-239 is -0.194115 over 4480.01 frames.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.777066 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.597534 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.407116 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.62653 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.851457 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.938987 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.7346 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintStatsForThisPhase():nnet-training.cc:278) Average objective function for 'output' for minibatches 240-249 is -0.229887 over 4479.95 frames.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.795195 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.889471 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.980621 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.745833 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.76437 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.912727 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.66918 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.749548 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintStatsForThisPhase():nnet-training.cc:278) Average objective function for 'output' for minibatches 250-259 is -0.147656 over 4480 frames.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.683151 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.790416 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.921426 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.956267 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.880294 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.586568 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.296854 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.491528 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.706573 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintStatsForThisPhase():nnet-training.cc:278) Average objective function for 'output' for minibatches 260-269 is -0.1973 over 4479.97 frames.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.744344 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.497096 with max-change=0.141421.
+LOG (nnet3-shuffle-egs[5.5.1060~1-ae8cb]:main():nnet3-shuffle-egs.cc:105) Shuffled order of 17562 neural-network training examples using a buffer (partial randomization)
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.496112 with max-change=0.141421.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:UpdateNnetWithMaxChange():nnet-utils.cc:2205) Global max-change factor was 0.735182 with max-change=0.141421.
+LOG (nnet3-merge-egs[5.5.1060~1-ae8cb]:PrintSpecificStats():nnet-example-utils.cc:1162) Merged specific eg types as follows [format: <eg-size1>={<mb-size1>-><num-minibatches1>,<mbsize2>-><num-minibatches2>.../d=<num-discarded>},<egs-size2>={...},... (note,egs-size == number of input frames including context).
+LOG (nnet3-merge-egs[5.5.1060~1-ae8cb]:PrintSpecificStats():nnet-example-utils.cc:1192) 112={,d=1},170={,d=1},191={64->274,d=24}
+LOG (nnet3-merge-egs[5.5.1060~1-ae8cb]:PrintAggregateStats():nnet-example-utils.cc:1158) Processed 17562 egs of avg. size 191 into 274 minibatches, discarding 0.148% of egs.  Avg minibatch size was 64, #distinct types of egs/minibatches was 3/1
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintTotalStats():nnet-training.cc:317) Overall average objective function for 'output' is -0.193946 over 122752 frames.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:PrintTotalStats():nnet-training.cc:324) [this line is to be parsed by a script:] log-prob-per-frame=-0.193946
+LOG (nnet3-train[5.5.1060~1-ae8cb]:Print():nnet-utils.cc:2311) For tdnn2.affine, per-component max-change was enforced 0.364964 % of the time.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:Print():nnet-utils.cc:2320) The global max-change was enforced 89.781 % of the time.
+LOG (nnet3-train[5.5.1060~1-ae8cb]:main():nnet3-train.cc:91) Wrote model to exp/displace_dev_sad_tdnn_stats/1.3.raw
+LOG (nnet3-train[5.5.1060~1-ae8cb]:~CachingOptimizingCompiler():nnet-optimize.cc:710) 0.0583 seconds taken in nnet3 compilation total (breakdown: 0.0352 compilation, 0.00742 optimization, 0.00474 shortcut expansion, 0.00139 checking, 0.000904 computing indexes, 0.00868 misc.) + 0 I/O.
+# Accounting: time=8 threads=1
+# Finished at Sat Feb 11 19:01:25 IST 2023 with status 0

@@ -1,0 +1,7 @@
+# Running on compute-0-3.local
+# Started at Sat Feb 11 19:22:01 IST 2023
+# nnet3-average exp/displace_dev_sad_tdnn_stats/38.1.raw exp/displace_dev_sad_tdnn_stats/38.2.raw exp/displace_dev_sad_tdnn_stats/38.3.raw exp/displace_dev_sad_tdnn_stats/38.4.raw exp/displace_dev_sad_tdnn_stats/38.5.raw exp/displace_dev_sad_tdnn_stats/38.raw 
+nnet3-average exp/displace_dev_sad_tdnn_stats/38.1.raw exp/displace_dev_sad_tdnn_stats/38.2.raw exp/displace_dev_sad_tdnn_stats/38.3.raw exp/displace_dev_sad_tdnn_stats/38.4.raw exp/displace_dev_sad_tdnn_stats/38.5.raw exp/displace_dev_sad_tdnn_stats/38.raw 
+LOG (nnet3-average[5.5.1060~1-ae8cb]:main():nnet3-average.cc:164) Averaged parameters of 5 neural nets, and wrote to exp/displace_dev_sad_tdnn_stats/38.raw
+# Accounting: time=0 threads=1
+# Finished at Sat Feb 11 19:22:01 IST 2023 with status 0

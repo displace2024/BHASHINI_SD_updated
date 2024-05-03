@@ -1,0 +1,6 @@
+# Running on compute-0-0.local
+# Started at Sat Feb 11 17:18:49 IST 2023
+# sum-lda-accs exp/displace_dev_sad_tdnn_stats/lda_stats exp/displace_dev_sad_tdnn_stats/1.lda_stats exp/displace_dev_sad_tdnn_stats/2.lda_stats exp/displace_dev_sad_tdnn_stats/3.lda_stats exp/displace_dev_sad_tdnn_stats/4.lda_stats exp/displace_dev_sad_tdnn_stats/5.lda_stats exp/displace_dev_sad_tdnn_stats/6.lda_stats exp/displace_dev_sad_tdnn_stats/7.lda_stats exp/displace_dev_sad_tdnn_stats/8.lda_stats exp/displace_dev_sad_tdnn_stats/9.lda_stats exp/displace_dev_sad_tdnn_stats/10.lda_stats 
+sum-lda-accs exp/displace_dev_sad_tdnn_stats/lda_stats exp/displace_dev_sad_tdnn_stats/1.lda_stats exp/displace_dev_sad_tdnn_stats/2.lda_stats exp/displace_dev_sad_tdnn_stats/3.lda_stats exp/displace_dev_sad_tdnn_stats/4.lda_stats exp/displace_dev_sad_tdnn_stats/5.lda_stats exp/displace_dev_sad_tdnn_stats/6.lda_stats exp/displace_dev_sad_tdnn_stats/7.lda_stats exp/displace_dev_sad_tdnn_stats/8.lda_stats exp/displace_dev_sad_tdnn_stats/9.lda_stats exp/displace_dev_sad_tdnn_stats/10.lda_stats 
+# Accounting: time=0 threads=1
+# Finished at Sat Feb 11 17:18:49 IST 2023 with status 0
